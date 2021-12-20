@@ -1,33 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-.btn {
-  background-color: #111;
-  border: none;
-  color: white;
-  padding: 12px 30px;
-  cursor: pointer;
-  font-size: 20px;
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
 }
-/* Darker background on mouse-over */
-.btn:hover {
-  background-color: RoyalBlue;
+
+li {
+    float: left;
 }
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.show {display:block;}
 </style>
 </head>
 <body>
-<h2>DOWNLOAD</h2>
-<p>link : line ranger 7.7.0 32bit</p>
-<a href="https://download1328.mediafire.com/a4mb7lnoyivg/4mdfve6rrqazytc/LINE+Rangers+Fire+Force+Tie+Up_v7.7.0_apkpure.com.xapk" download>
-<button class="btn" style="width:100%"><i class="fa fa-download"></i> Download</button>
 
-<a>link : line ranger 7.7.1 32bit</a>
-<a href="https://download2278.mediafire.com/q0czz9bcicmg/fqbwoscpjx9lir2/LINE+Rangers+Fire+Force+Tie+Up_v7.7.1_apkpure.com.xapk" download>
-<button class="btn" style="width:100%"><i class="fa fa-download"></i> Download</button>
+<ul>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()">เลือกเวอร์ชั่น line rangers ที่จะโหลด</a>
+    <div class="dropdown-content" id="myDropdown">
+      <a href="7.7.0.html">7.7.0</a>
+      <a href="7.7.1.html">7.7.1</a>
+    </div>
+  </li>
+</ul>
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    for (var d = 0; d < dropdowns.length; d++) {
+      var openDropdown = dropdowns[d];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
 
 </body>
 </html>
